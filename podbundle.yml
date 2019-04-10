@@ -1,0 +1,17 @@
+apiVersion: "ben.is.cool/v1"
+kind: PodBundle
+metadata:
+  name: wow-such-bundle
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: php-redis
+  template:
+    metadata:
+      labels:
+        app: php-redis
+    spec:
+      containers:
+      - name: foo
+        image: gcr.io/google_samples/gb-frontend:v2
