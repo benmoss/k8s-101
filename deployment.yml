@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+  labels:
+    app: deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: php-redis
+  template:
+    metadata:
+      labels:
+        app: php-redis
+    spec:
+      containers:
+      - name: foo
+        image: gcr.io/google_samples/gb-frontend:v2
